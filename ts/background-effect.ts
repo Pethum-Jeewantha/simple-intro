@@ -1,3 +1,5 @@
+import {x as mouseX,y as mouseY} from './mouse-listener.js';
+
 class Moveable{
     private elm:JQuery;
     
@@ -20,6 +22,48 @@ class Moveable{
     move(): void{
         let top = this.elm.offset()!.top;
         let left = this.elm.offset()!.left;
+
+        if(mouseX !== -1 && mouseY !== -1){
+            let elmX = left + this.elm.width()! / 2;
+            let elmY = top + this.elm.height()! / 2;
+
+            let x = elmX - mouseX;
+            let y = elmY - mouseY;
+
+            let hypot = Math.hypot(elmX - mouseX, elmY- mouseY);
+            let radius = $("#circle").width()! / 2 + 15;
+
+            if (hypot <=  radius){
+
+                if (x > 0){
+                    this.elm.offset({
+                        left: left + (radius -x)
+                    });
+                    left = left  + (radius  -x);
+                }else{
+                    this.elm.offset({
+                        left: left - (radius - Math.abs(x)) - this.elm.width()!
+                    });
+                    left = left - (radius - Math.abs(x)) - this.elm.width()!;
+                }
+
+                if (y > 0){
+                    this.elm.offset({
+                        top: top + (radius - y)
+                    });
+                    top = top + (radius - y);
+                }else{
+                    this.elm.offset({
+                        top: top - (radius - Math.abs(y)) - this.elm.height()!
+                    });
+                    top = top - (radius - Math.abs(y)) - this.elm.height()!;
+                }  
+
+
+                this.dx = -this.dx;
+                this.dy = -this.dy;
+            }
+        }
 
         this.elm.offset({
             top: top + this.dy,
