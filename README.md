@@ -23,7 +23,7 @@
 
 ## About The Project
 
-This repository is a intro for build to practice some JS TS stuff.
+This repository is a intro to practice some JS TS stuff.
 
 ## Getting Started
 
