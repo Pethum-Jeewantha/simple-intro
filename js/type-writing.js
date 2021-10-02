@@ -1,7 +1,8 @@
 "use strict";
 const texts = [
     'Welcome...!',
-    "I'm Pethum Jeewantha"
+    "Have a Nice Day",
+    "Be Kind...."
 ];
 let i = 0;
 let j = 0;
