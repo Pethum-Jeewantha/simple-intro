@@ -1,3 +1,7 @@
+*{
+  box-sizing: border-box;
+}
+
 body{
   overflow: hidden;
 }
@@ -61,4 +65,10 @@ body{
   opacity: .8;
   padding: 10px;
   border-radius: 10px;
+}
+
+.moveable{
+  width: 30px;
+  height: 30px;
+  position: absolute;
 }
