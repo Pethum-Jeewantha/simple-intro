@@ -1,4 +1,4 @@
-# Twitter Clone
+# Intro
 
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
